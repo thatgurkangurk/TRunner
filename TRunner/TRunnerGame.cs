@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using TRunner.Entities;
 using TRunner.Graphics;
 
 namespace TRunner;
@@ -21,6 +22,8 @@ public class TRunnerGame : Game
     private SoundEffect _sfxScoreReached;
 
     private Texture2D _spriteSheetTexture;
+
+    private Trex _trex;
 
     public TRunnerGame()
     {
@@ -45,6 +48,8 @@ public class TRunnerGame : Game
         _sfxHit = Content.Load<SoundEffect>(ASSET_NAME_SFX_HIT);
         _sfxBtnPress = Content.Load<SoundEffect>(ASSET_NAME_SFX_BTN_PRESS);
         _sfxScoreReached = Content.Load<SoundEffect>(ASSET_NAME_SFX_SCORE_REACHED);
+
+        _trex = new Trex(_spriteSheetTexture, new Vector2(20, 20));
     }
 
     protected override void Update(GameTime gameTime)
@@ -63,9 +68,7 @@ public class TRunnerGame : Game
 
         _spriteBatch.Begin();
 
-        Sprite trexSprite = new Sprite(_spriteSheetTexture, 848, 0, 44, 52);
-
-        trexSprite.Draw(_spriteBatch, new Vector2(20, 20));
+        _trex.Draw(_spriteBatch, gameTime);
 
         _spriteBatch.End();
 
