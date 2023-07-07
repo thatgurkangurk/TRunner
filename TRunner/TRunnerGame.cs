@@ -44,7 +44,11 @@ public class TRunnerGame : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        // TODO: Add your drawing code here
+        _spriteBatch.Begin();
+
+        // TODO: Draw stuff
+
+        _spriteBatch.End();
 
         base.Draw(gameTime);
     }
