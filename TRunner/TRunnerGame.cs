@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -6,8 +7,19 @@ namespace TRunner;
 
 public class TRunnerGame : Game
 {
+    private const string ASSET_NAME_SPRITESHEET = "TRunnerSpritesheet";
+    private const string ASSET_NAME_SFX_HIT = "hit";
+    private const string ASSET_NAME_SFX_SCORE_REACHED = "score-reached";
+    private const string ASSET_NAME_SFX_BTN_PRESS = "button-press";
+
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
+
+    private SoundEffect _sfxHit;
+    private SoundEffect _sfxBtnPress;
+    private SoundEffect _sfxScoreReached;
+
+    private Texture2D _spriteSheetTexture;
 
     public TRunnerGame()
     {
@@ -27,7 +39,11 @@ public class TRunnerGame : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        // TODO: use this.Content to load your game content here
+        _spriteSheetTexture = Content.Load<Texture2D>(ASSET_NAME_SPRITESHEET);
+
+        _sfxHit = Content.Load<SoundEffect>(ASSET_NAME_SFX_HIT);
+        _sfxBtnPress = Content.Load<SoundEffect>(ASSET_NAME_SFX_BTN_PRESS);
+        _sfxScoreReached = Content.Load<SoundEffect>(ASSET_NAME_SFX_SCORE_REACHED);
     }
 
     protected override void Update(GameTime gameTime)
@@ -46,7 +62,7 @@ public class TRunnerGame : Game
 
         _spriteBatch.Begin();
 
-        // TODO: Draw stuff
+        _spriteBatch.Draw(_spriteSheetTexture, new Vector2(10, 10), Color.White);
 
         _spriteBatch.End();
 
