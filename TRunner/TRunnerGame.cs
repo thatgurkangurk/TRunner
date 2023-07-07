@@ -13,6 +13,8 @@ public class TRunnerGame : Game
     private const string ASSET_NAME_SFX_SCORE_REACHED = "score-reached";
     private const string ASSET_NAME_SFX_BTN_PRESS = "button-press";
 
+    public const int WINDOW_WIDTH = 600, WINDOW_HEIGHT = 150;
+
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
@@ -33,9 +35,10 @@ public class TRunnerGame : Game
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
-
         base.Initialize();
+        _graphics.PreferredBackBufferHeight = WINDOW_HEIGHT;
+        _graphics.PreferredBackBufferWidth = WINDOW_WIDTH;
+        _graphics.ApplyChanges();
     }
 
     protected override void LoadContent()
