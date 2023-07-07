@@ -62,7 +62,7 @@ public class TRunnerGame : Game
 
         _spriteBatch.Begin();
 
-        _spriteBatch.Draw(_spriteSheetTexture, new Vector2(10, 10), Color.White);
+        _spriteBatch.Draw(_spriteSheetTexture, new Vector2(10, 10), new Rectangle(848, 0, 44, 52), Color.White);
 
         _spriteBatch.End();
 
