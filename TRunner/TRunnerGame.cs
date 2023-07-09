@@ -15,6 +15,8 @@ public class TRunnerGame : Game
 
     public const int WINDOW_WIDTH = 600, WINDOW_HEIGHT = 150;
 
+    public const int TREX_START_POS_Y = WINDOW_HEIGHT - 16;
+
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
