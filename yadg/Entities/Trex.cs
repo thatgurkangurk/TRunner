@@ -6,10 +6,14 @@ namespace YADG.Entities
 {
     public class Trex : IGameEntity
     {
-        private const int TREX_DEFAULT_SPRITE_POS_X = 848,
-            TREX_DEFAULT_SPRITE_POS_Y = 0,
-            TREX_DEFAULT_SPRITE_WIDTH = 44,
-            TREX_DEFAULT_SPRITE_HEIGHT = 52;
+        private const int IDLE_SPRITE_POS_X = 40, IDLE_SPRITE_POS_Y = 0;
+
+        public const int DEFAULT_SPRITE_POS_X = 848,
+            DEFAULT_SPRITE_POS_Y = 0,
+            DEFAULT_SPRITE_WIDTH = 44,
+            DEFAULT_SPRITE_HEIGHT = 52;
+
+        private Sprite _idleSprite;
 
         public Sprite Sprite { get; private set; }
 
@@ -26,16 +30,22 @@ namespace YADG.Entities
         public Trex(Texture2D spriteSheet, Vector2 pos)
         {
             Sprite = new Sprite(spriteSheet,
-                TREX_DEFAULT_SPRITE_POS_X,
-                TREX_DEFAULT_SPRITE_POS_Y,
-                TREX_DEFAULT_SPRITE_WIDTH,
-                TREX_DEFAULT_SPRITE_HEIGHT
+                DEFAULT_SPRITE_POS_X,
+                DEFAULT_SPRITE_POS_Y,
+                DEFAULT_SPRITE_WIDTH,
+                DEFAULT_SPRITE_HEIGHT
             );
             Position = pos;
+            _idleSprite = new Sprite(spriteSheet, IDLE_SPRITE_POS_X, IDLE_SPRITE_POS_Y, DEFAULT_SPRITE_WIDTH, DEFAULT_SPRITE_HEIGHT);
+            State = TrexState.Idle;
         }
 
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
+            if (State == TrexState.Idle)
+            {
+                _idleSprite.Draw(spriteBatch, Position);
+            }
             Sprite.Draw(spriteBatch, Position);
         }
 

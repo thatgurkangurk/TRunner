@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using YADG.Entities;
+using YADG.Graphics;
 
 namespace YADG;
 
@@ -16,6 +17,7 @@ public class Game : Microsoft.Xna.Framework.Game
     public const int WINDOW_WIDTH = 600, WINDOW_HEIGHT = 150;
 
     public const int TREX_START_POS_Y = WINDOW_HEIGHT - 16;
+    public const int TREX_START_POS_X = 1;
 
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
@@ -53,7 +55,8 @@ public class Game : Microsoft.Xna.Framework.Game
         _sfxBtnPress = Content.Load<SoundEffect>(ASSET_NAME_SFX_BTN_PRESS);
         _sfxScoreReached = Content.Load<SoundEffect>(ASSET_NAME_SFX_SCORE_REACHED);
 
-        _trex = new Trex(_spriteSheetTexture, new Vector2(20, 20));
+        _trex = new Trex(_spriteSheetTexture, new Vector2(TREX_START_POS_X, TREX_START_POS_Y - Trex.DEFAULT_SPRITE_HEIGHT));
+
     }
 
     protected override void Update(GameTime gameTime)
