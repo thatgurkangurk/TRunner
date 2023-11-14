@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace TRunner.Graphics
+namespace YADG.Graphics
 {
     public class Sprite
     {

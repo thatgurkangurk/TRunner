@@ -2,13 +2,13 @@
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using TRunner.Entities;
+using YADG.Entities;
 
-namespace TRunner;
+namespace YADG;
 
-public class TRunnerGame : Game
+public class Game : Microsoft.Xna.Framework.Game
 {
-    private const string ASSET_NAME_SPRITESHEET = "TRunnerSpritesheet";
+    private const string ASSET_NAME_SPRITESHEET = "YADGSpritesheet";
     private const string ASSET_NAME_SFX_HIT = "hit";
     private const string ASSET_NAME_SFX_SCORE_REACHED = "score-reached";
     private const string ASSET_NAME_SFX_BTN_PRESS = "button-press";
@@ -28,7 +28,7 @@ public class TRunnerGame : Game
 
     private Trex _trex;
 
-    public TRunnerGame()
+    public Game()
     {
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";

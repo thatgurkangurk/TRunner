@@ -1,4 +1,4 @@
-﻿namespace TRunner.Entities
+﻿namespace YADG.Entities
 {
     public enum TrexState
     {

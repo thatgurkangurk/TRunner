@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TRunner", "TRunner\TRunner.csproj", "{C6875FB8-8A8D-4305-A18B-278AD77951D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YADG", "YADG\YADG.csproj", "{C6875FB8-8A8D-4305-A18B-278AD77951D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EE447E02-7E1F-45D0-893D-72B718BA922E}"
 	ProjectSection(SolutionItems) = preProject

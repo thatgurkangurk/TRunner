@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using TRunner.Graphics;
+using YADG.Graphics;
 
-namespace TRunner.Entities
+namespace YADG.Entities
 {
     public class Trex : IGameEntity
     {

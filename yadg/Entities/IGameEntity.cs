@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace TRunner.Entities
+namespace YADG.Entities
 {
     public interface IGameEntity
     {
